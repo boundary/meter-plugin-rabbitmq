@@ -46,7 +46,7 @@ class RabittMqMonitoring():
 
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
-      print "%-45s%20s" % (value, dic.get(key, "-"))
+      print "%-35s%10s\t%s" % (value.upper(), dic.get(key, "-"), dic.get("name"))
 
   def get_details(self):
     overview = self.call_api("overview")
