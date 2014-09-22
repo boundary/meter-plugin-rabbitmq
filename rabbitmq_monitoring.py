@@ -1,13 +1,10 @@
+#!/usr/bin/env python
 import requests
 import json
 from time import sleep
 import collections
 import sys
-
-BASE_URL = "http://ec2-54-164-98-96.compute-1.amazonaws.com:15672/"
-API_URL = BASE_URL + "api/"
-BASIC_AUTH_USER = "guest"
-BASIC_AUTH_PASS = "guest"
+from os.path import basename
 
 KEY_MAPPING = [
   ("rabbitmq_version", "RabbitMQ_Version"),
@@ -36,17 +33,25 @@ KEY_MAPPING = [
   ("disk_free", "Disk_Free")
   ]
 
-class RabittMqMonitoring():
-  def send_get(self, url):
-    response = requests.get(url, auth=(BASIC_AUTH_USER, BASIC_AUTH_PASS))
+class RabitMQMonitoring():
+
+  def __init__(self,host,port,user,password):
+     self.host = host
+     self.port = port
+     self.user = user
+     self.password = password
+     self.url = "http://" + self.host + ":" + self.port + "/api/"
+
+  def send_get(self,url):
+    response = requests.get(url, auth=(self.user, self.password))
     return response.json()
 
   def call_api(self, endpoint):
-    return self.send_get(API_URL + endpoint)
+    return self.send_get(self.url + endpoint)
 
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
-      print "%-35s%10s\t%s" % (value.upper(), dic.get(key, "-"), dic.get("name"))
+      print("%s%10s\t%s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
 
   def get_details(self):
     overview = self.call_api("overview")
@@ -69,19 +74,20 @@ class RabittMqMonitoring():
         items.append((new_key, v))
     return dict(items)
 
+  def extractMetrics(self):
+    self.get_details()
+
   def continuous_monitoring(self, secs):
-    print "Continuously monitoring at every %d seconds" % (secs)
+    print("Continuously monitoring at every %d seconds" % (secs))
     while True:
-      self.get_details()
-      print "\n\n"
+      self.get_details(self.print_dict)
+      print("\n\n")
       sleep(secs)
 
 if __name__ == "__main__":
-  monitor = RabittMqMonitoring()
-
-  if len(sys.argv) == 1:
-    monitor.get_details()
-  elif sys.argv[1].isdigit() and sys.argv[1] > 0:
-    monitor.continuous_monitoring(int(sys.argv[1]))
-  else:
-    monitor.continuous_monitoring(3)
+  if len(sys.argv) != 5:
+    sys.stderr.write("usage: " + basename(sys.argv[0]) + "<host> <port> <user> <password>\n")
+    sys.exit(1)
+  
+  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+  monitor.get_details()
