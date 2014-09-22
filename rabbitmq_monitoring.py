@@ -46,7 +46,7 @@ class RabittMqMonitoring():
 
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
-      print "%-35s%10s\t%s" % (value.upper(), dic.get(key, "-"), dic.get("name"))
+      print("%-35s%10s\t%s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
 
   def get_details(self):
     overview = self.call_api("overview")
@@ -70,10 +70,10 @@ class RabittMqMonitoring():
     return dict(items)
 
   def continuous_monitoring(self, secs):
-    print "Continuously monitoring at every %d seconds" % (secs)
+    print("Continuously monitoring at every %d seconds" % (secs))
     while True:
       self.get_details()
-      print "\n\n"
+      print("\n\n")
       sleep(secs)
 
 if __name__ == "__main__":
