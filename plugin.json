@@ -1,0 +1,69 @@
+{
+    "description": "Extracts metrics from a RabbitMQ instance",
+    "command": "bash index.sh $(hostname) $(port) $(user) $(password)",
+    "metrics" : ["RABBITMQ_TOTAL_QUEUE",
+                 "RABBITMQ_TOTAL_EXCHANGES",
+                 "RABBITMQ_TOTAL_CONSUMERS",
+                 "RABBITMQ_TOTAL_CONNECTIONS",
+                 "RABBITMQ_MESSAGES_PUSH_TOTAL",
+                 "RABBITMQ_MESSAGES_PUSH_RATE",
+                 "RABBITMQ_MESSAGES_PUSHED_WITH_NO-ACK",
+                 "RABBITMQ_MESSAGES_PUSHED_WITH_NO-ACK_RATE",
+                 "RABBITMQ_MESSAGES_PULLED",
+                 "RABBITMQ_MESSAGES_TOTAL_PUSH_PULL_RATE",
+                 "RABBITMQ_MESSAGES_REDELIVERED",
+                 "RABBITMQ_MESSAGES_REDELIVERY_RATE",
+                 "RABBITMQ_MESSAGES_PUBLISHED",
+                 "RABBITMQ_MESSAGES_PUBLISH_RATE",
+                 "RABBITMQ_QUEUE_TOTAL_MESSAGES",
+                 "RABBITMQ_QUEUE_MESSAGE_RATE",
+                 "RABBITMQ_QUEUE_MESSAGES_READY",
+                 "RABBITMQ_QUEUE_READY_MESSAGES_RATE",
+                 "RABBITMQ_QUEUED_UN-ACK_MESSAGES",
+                 "RABBITMQ_QUEUE_UN-ACK_MESSAGES_RATE",
+                 "RABBITMQ_MEMORY_USED",
+                 "RABBITMQ_DISK_FREE"],
+    "paramSchema": [
+        {
+            "title": "Poll Interval",
+            "name": "port",
+            "description": "The Poll Interval to call the command. Defaults 5 seconds",
+            "type": "string",
+            "default": 5,
+            "required": false
+        },
+        {
+            "title": "Hostname",
+            "name": "hostname",
+            "description": "Hostname of the",
+            "type": "string",
+            "default": "",
+            "required": true
+        },
+        {
+            "title": "Port",
+            "name": "port",
+            "description": "The Poll Interval to call the command. Defaults 5 seconds",
+            "type": "string",
+            "default": 5,
+            "required": true
+        },
+        {
+            "title": "User",
+            "name": "user",
+            "description": "User name to authenticate with",
+            "type": "string",
+            "default": "",
+            "required": true
+        },
+        {
+            "title": "Password",
+            "name": "password",
+            "description": "Password to authenticate with",
+            "type": "string",
+            "default": "",
+            "required": true
+        }
+    ]
+}
+

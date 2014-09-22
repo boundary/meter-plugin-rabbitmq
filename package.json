@@ -1,0 +1,24 @@
+{
+        "name": "boundary-plugin-rabbitmq",
+        "version": "0.1.0",
+        "private": false,
+        "description": "Extracts metrics from RabbitMQ instance",
+        "main": "index.sh",
+        "devDependencies": {},
+        "repository": {
+        "type": "git",
+        "url": "https://github.com/boundary/boundary-plugin-rabbitmq"
+        },
+        "keywords": [
+                "boundary",
+                "plugin",
+                "rabbitmq"
+        ],
+        "author": "<support@boundary.com>",
+        "license": "Apache v2",
+        "bugs": {
+                "url": "https://github.com/boundary/boundary-plugin-rabbitmq/issues"
+        },
+        "engine": "python >= 2.7.6"
+}
+
