@@ -10,13 +10,13 @@ Here are the list of metrics created when the RabbitMQ plugin is installed along
 
 | Metric                                  | Description |
 |-----------------------------------------|-------------|
-|RABBITMQ_TOTAL_EXCHANGES                 | |
-|RABBITMQ_TOTAL_CONSUMERS                 | |
-|RABBITMQ_TOTAL_CONNECTIONS               | |
-|RABBITMQ_MESSAGES_PUSH_TOTAL             | |
-|RABBITMQ_MESSAGES_PUSH_RATE              | |
-|RABBITMQ_MESSAGES_PUSHED_WITH_NO-ACK"    | |
-|RABBITMQ_MESSAGES_PUSHED_WITH_NO-ACK_RATE| |
+|RABBITMQ\_TOTAL\_EXCHANGES                 | |
+|RABBITMQ\_TOTAL\_CONSUMERS                 | |
+|RABBITMQ\_TOTAL\_CONNECTIONS               | |
+|RABBITMQ\_MESSAGES\_PUSH\_TOTAL             | |
+|RABBITMQ\_MESSAGES\_PUSH\_RATE              | |
+|RABBITMQ_MESSAGES_PUSHED_WITH_NO_ACK     | |
+|RABBITMQ_MESSAGES_PUSHED_WITH_NO_ACK_RATE| |
 |RABBITMQ_MESSAGES_PULLED                 | |
 |RABBITMQ_MESSAGES_TOTAL_PUSH_PULL_RATE   | |
 |RABBITMQ_MESSAGES_REDELIVERED            | |
@@ -27,8 +27,8 @@ Here are the list of metrics created when the RabbitMQ plugin is installed along
 |RABBITMQ_QUEUE_MESSAGE_RATE              | |
 |RABBITMQ_QUEUE_MESSAGES_READY            | |
 |RABBITMQ_QUEUE_READY_MESSAGES_RATE       | |
-|RABBITMQ_QUEUED_UN-ACK_MESSAGES          | |
-|RABBITMQ_QUEUE_UN-ACK_MESSAGES_RATE      | |
+|RABBITMQ_QUEUED_UN_ACK_MESSAGES          | |
+|RABBITMQ_QUEUE_UN_ACK_MESSAGES_RATE      | |
 |RABBITMQ_MEMORY_USED                     | |
 |RABBITMQ_DISK_FREE                       | |
 
