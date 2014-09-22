@@ -27,8 +27,8 @@ KEY_MAPPING = [
   ("queue_totals_messages_details_rate", "RabbitMQ_Queue_Message_Rate"),
   ("queue_totals_messages_ready", "RabbitMQ_Queue_Messages_Ready"),
   ("queue_totals_messages_ready_details_rate", "RabbitMQ_Queue_Ready_Messages_Rate"),
-  ("queue_totals_messages_unacknowledged", "RabbitMQ_Queued_Un-Ack_Messages"),
-  ("queue_totals_messages_unacknowledged_details_rate","RabbitMQ_Queue_Un-Ack_Messages_Rate"),
+  ("queue_totals_messages_unacknowledged", "RabbitMQ_Queued_Un_Ack_Messages"),
+  ("queue_totals_messages_unacknowledged_details_rate","RabbitMQ_Queue_Un_Ack_Messages_Rate"),
   ("mem_used", "RabbitMQ_Memory_Used"),
   ("disk_free", "RabbitMQ_Disk_Free")
   ]
