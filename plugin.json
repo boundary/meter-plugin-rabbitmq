@@ -1,6 +1,6 @@
 {
     "description": "Extracts metrics from a RabbitMQ instance",
-    "command": "bash index.sh $(hostname) $(port) $(user) $(password)",
+    "command": "python rabbitmq_monitoring.py $(hostname) $(port) $(user) $(password)",
     "metrics" : ["RABBITMQ_TOTAL_QUEUE",
                  "RABBITMQ_TOTAL_EXCHANGES",
                  "RABBITMQ_TOTAL_CONSUMERS",
