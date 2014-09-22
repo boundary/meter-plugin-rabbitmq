@@ -8,29 +8,29 @@ from os.path import basename
 
 KEY_MAPPING = [
   ("rabbitmq_version", "RabbitMQ_Version"),
-  ("object_totals_queues", "Total_Queues"),
-  ("object_totals_channels", "Total_Channels"),
-  ("object_totals_exchanges", "Total_Exchanges"),
-  ("object_totals_consumers", "Total_Consumers"),
-  ("object_totals_connections", "Total_Connections"),
-  ("message_stats_deliver", "Messages_Push_Total"),
-  ("message_stats_deliver_details_rate", "Messages_Push_Rate"),
-  ("message_stats_deliver_no_ack", "Messages_Pushed_With_No-Ack"),
-  ("message_stats_deliver_no_ack_details_rate", "Messages_Pushed_With_No-Ack_Rate"),
-  ("message_stats_deliver_get", "Messages_Pulled"),
-  ("message_stats_deliver_get_details_rate", "Messages_Total_Push_Pull_Rate"),
-  ("message_stats_redeliver", "Messages_Redelivered"),
-  ("message_stats_redeliver_details_rate", "Messages_Redelivery_Rate"),
-  ("message_stats_publish", "Messages_Published"),
-  ("message_stats_publish_details_rate", "Messages_Publish_Rate"),
-  ("queue_totals_messages", "Queue_Total_Messages"),
-  ("queue_totals_messages_details_rate", "Queue_Message_Rate"),
-  ("queue_totals_messages_ready", "Queue_Messages_Ready"),
-  ("queue_totals_messages_ready_details_rate", "Queue_Ready_Messages_Rate"),
-  ("queue_totals_messages_unacknowledged", "Queued_Un-Ack_Messages"),
-  ("queue_totals_messages_unacknowledged_details_rate","Queue_Un-Ack_Messages_Rate"),
-  ("mem_used", "Memory_Used"),
-  ("disk_free", "Disk_Free")
+  ("object_totals_queues", "RabbitMQ_Total_Queues"),
+  ("object_totals_channels", "RabbitMQ_Total_Channels"),
+  ("object_totals_exchanges", "RabbitMQ_Total_Exchanges"),
+  ("object_totals_consumers", "RabbitMQ_Total_Consumers"),
+  ("object_totals_connections", "RabbitMQ_Total_Connections"),
+  ("message_stats_deliver", "RabbitMQ_Messages_Push_Total"),
+  ("message_stats_deliver_details_rate", "RabbitMQ_Messages_Push_Rate"),
+  ("message_stats_deliver_no_ack", "RabbitMQ_Messages_Pushed_With_No-Ack"),
+  ("message_stats_deliver_no_ack_details_rate", "RabbitMQ_Messages_Pushed_With_No-Ack_Rate"),
+  ("message_stats_deliver_get", "RabbitMQ_Messages_Pulled"),
+  ("message_stats_deliver_get_details_rate", "RabbitMQ_Messages_Total_Push_Pull_Rate"),
+  ("message_stats_redeliver", "RabbitMQ_Messages_Redelivered"),
+  ("message_stats_redeliver_details_rate", "RabbitMQ_Messages_Redelivery_Rate"),
+  ("message_stats_publish", "RabbitMQ_Messages_Published"),
+  ("message_stats_publish_details_rate", "RabbitMQ_Messages_Publish_Rate"),
+  ("queue_totals_messages", "RabbitMQ_Queue_Total_Messages"),
+  ("queue_totals_messages_details_rate", "RabbitMQ_Queue_Message_Rate"),
+  ("queue_totals_messages_ready", "RabbitMQ_Queue_Messages_Ready"),
+  ("queue_totals_messages_ready_details_rate", "RabbitMQ_Queue_Ready_Messages_Rate"),
+  ("queue_totals_messages_unacknowledged", "RabbitMQ_Queued_Un-Ack_Messages"),
+  ("queue_totals_messages_unacknowledged_details_rate","RabbitMQ_Queue_Un-Ack_Messages_Rate"),
+  ("mem_used", "RabbitMQ_Memory_Used"),
+  ("disk_free", "RabbitMQ_Disk_Free")
   ]
 
 class RabitMQMonitoring():
@@ -51,7 +51,8 @@ class RabitMQMonitoring():
 
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
-      print("%s%10s\t%s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
+      if dic.get(key,"-") != "-":
+        print("%s %10s %s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
 
   def get_details(self):
     overview = self.call_api("overview")
