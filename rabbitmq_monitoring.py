@@ -1,10 +1,12 @@
 #!/usr/bin/env python
-import requests
+#import requests
 import json
 from time import sleep
 import collections
 import sys
 from os.path import basename
+import urllib2
+from base64 import b64encode
 
 KEY_MAPPING = [
   ("rabbitmq_version", "RabbitMQ_Version"),
@@ -46,8 +48,25 @@ class RabitMQMonitoring():
     response = requests.get(url, auth=(self.user, self.password))
     return response.json()
 
+#  def call_api(self, endpoint):
+#    return self.send_get(self.url + endpoint)
+
   def call_api(self, endpoint):
-    return self.send_get(self.url + endpoint)
+    url = self.url + endpoint
+    auth = b64encode(self.user + ":" + self.password)
+    headers = {
+        "Accept": "application/json",
+        "Authorization": "Basic %s" % auth,
+    }
+    request = urllib2.Request(url,headers=headers)
+    try:
+        response = urllib2.urlopen(request)
+    except urllib2.HTTPError as e:
+        sys.stderror.write("Error getting data from AWS Cloud Watch API: %s (%d), Error: %s",
+                  getattr(e, "reason", "Unknown Reason"),e.code, e.read())
+        raise
+
+    return json.load(response)
 
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
@@ -64,6 +83,8 @@ class RabitMQMonitoring():
     if overview:
       data = self.flatten_dict(overview)
       self.print_dict(data)
+
+
 
   def flatten_dict(self, dic, parent_key='', sep='_'):
     items = []
