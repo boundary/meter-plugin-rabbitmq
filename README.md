@@ -8,29 +8,29 @@ The RabbitMQ plugin requires that you have python 2.6.6 or later installed on th
 ## Metrics
 Here are the list of metrics created when the RabbitMQ plugin is installed along with their descriptions.
 
-| Metric                                  | Description |
-|-----------------------------------------|-------------|
-|RABBITMQ\_TOTAL\_EXCHANGES                 | |
-|RABBITMQ\_TOTAL\_CONSUMERS                 | |
-|RABBITMQ\_TOTAL\_CONNECTIONS               | |
-|RABBITMQ\_MESSAGES\_PUSH\_TOTAL             | |
-|RABBITMQ\_MESSAGES\_PUSH\_RATE              | |
-|RABBITMQ_MESSAGES_PUSHED_WITH_NO_ACK     | |
-|RABBITMQ_MESSAGES_PUSHED_WITH_NO_ACK_RATE| |
-|RABBITMQ_MESSAGES_PULLED                 | |
-|RABBITMQ_MESSAGES_TOTAL_PUSH_PULL_RATE   | |
-|RABBITMQ_MESSAGES_REDELIVERED            | |
-|RABBITMQ_MESSAGES_REDELIVERY_RATE        | |
-|RABBITMQ_MESSAGES_PUBLISHED              | |
-|RABBITMQ_MESSAGES_PUBLISH_RATE           | |
-|RABBITMQ_QUEUE_TOTAL_MESSAGES            | |
-|RABBITMQ_QUEUE_MESSAGE_RATE              | |
-|RABBITMQ_QUEUE_MESSAGES_READY            | |
-|RABBITMQ_QUEUE_READY_MESSAGES_RATE       | |
-|RABBITMQ_QUEUED_UN_ACK_MESSAGES          | |
-|RABBITMQ_QUEUE_UN_ACK_MESSAGES_RATE      | |
-|RABBITMQ_MEMORY_USED                     | |
-|RABBITMQ_DISK_FREE                       | |
+| Metric                                        | Description |
+|-----------------------------------------------|-------------|
+|RABBITMQ\_TOTAL\_EXCHANGES                     | |
+|RABBITMQ\_TOTAL\_CONSUMERS                     | |
+|RABBITMQ\_TOTAL\_CONNECTIONS                   | |
+|RABBITMQ\_MESSAGES\_PUSH\_TOTAL                | |
+|RABBITMQ\_MESSAGES\_PUSH\_RATE                 | |
+|RABBITMQ\_MESSAGES\_PUSHED\_WITH\_NO\_ACK      | |
+|RABBITMQ\_MESSAGES\_PUSHED\_WITH\_NO\_ACK\_RATE| |
+|RABBITMQ\_MESSAGES\_PULLED                     | |
+|RABBITMQ\_MESSAGES\_TOTAL\_PUSH\_PULL\_RATE    | |
+|RABBITMQ\_MESSAGES\_REDELIVERED                | |
+|RABBITMQ\_MESSAGES\_REDELIVERY\_RATE           | |
+|RABBITMQ\_MESSAGES\_PUBLISHED                  | |
+|RABBITMQ\_MESSAGES\_PUBLISH\_RATE              | |
+|RABBITMQ\_QUEUE\_TOTAL\_MESSAGES               | |
+|RABBITMQ\_QUEUE\_MESSAGE\_RATE                 | |
+|RABBITMQ\_QUEUE\_MESSAGES\_READY               | |
+|RABBITMQ\_QUEUE\_READY\_MESSAGES\_RATE         | |
+|RABBITMQ\_QUEUED\_UN\_ACK\_MESSAGES            | |
+|RABBITMQ\_QUEUE\_UN\_ACK\_MESSAGES\_RATE       | |
+|RABBITMQ\_MEMORY\_USED                         | |
+|RABBITMQ\_DISK\_FREE                           | |
 
 
 ## Dashboards
