@@ -15,7 +15,7 @@ import urllib2
 from base64 import b64encode
 
 KEY_MAPPING = [
-  ("rabbitmq_version", "RabbitMQ_Version"),
+#  ("rabbitmq_version", "RabbitMQ_Version"),
   ("object_totals_queues", "RabbitMQ_Total_Queues"),
   ("object_totals_channels", "RabbitMQ_Total_Channels"),
   ("object_totals_exchanges", "RabbitMQ_Total_Exchanges"),
