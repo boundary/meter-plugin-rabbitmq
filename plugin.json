@@ -23,6 +23,7 @@
                  "RABBITMQ_QUEUE_UN_ACK_MESSAGES_RATE",
                  "RABBITMQ_MEMORY_USED",
                  "RABBITMQ_DISK_FREE"],
+    "postExtractTimeout": 10000,
     "paramSchema": [
         {
             "title": "Poll Interval",
