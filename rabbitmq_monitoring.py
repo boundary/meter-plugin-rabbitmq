@@ -15,7 +15,6 @@ import urllib2
 from base64 import b64encode
 
 KEY_MAPPING = [
-#  ("rabbitmq_version", "RabbitMQ_Version"),
   ("object_totals_queues", "RabbitMQ_Total_Queues"),
   ("object_totals_channels", "RabbitMQ_Total_Channels"),
   ("object_totals_exchanges", "RabbitMQ_Total_Exchanges"),
@@ -43,11 +42,12 @@ KEY_MAPPING = [
 
 class RabitMQMonitoring():
 
-  def __init__(self,host,port,user,password):
+  def __init__(self,host,port,user,password,debug):
      self.host = host
      self.port = port
      self.user = user
      self.password = password
+     self.debug = debug
      self.url = "http://" + self.host + ":" + self.port + "/api/"
 
   def send_get(self,url):
@@ -65,7 +65,7 @@ class RabitMQMonitoring():
     try:
         response = urllib2.urlopen(request)
     except urllib2.HTTPError as e:
-        sys.stderror.write("Error getting data from AWS Cloud Watch API: %s (%d), Error: %s",
+        sys.stderr.write("Error getting data from AWS Cloud Watch API: %s (%d), Error: %s",
                   getattr(e, "reason", "Unknown Reason"),e.code, e.read())
         raise
 
@@ -75,6 +75,8 @@ class RabitMQMonitoring():
     for (key, value) in KEY_MAPPING:
       if dic.get(key,"-") != "-":
         print("%s %10s %s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
+        sys.stderr.write("%s %10s %s\n" % (value.upper(), dic.get(key, "-"), dic.get("name")))
+        sys.stderr.flush()
 
   def get_details(self):
     overview = self.call_api("overview")
@@ -108,9 +110,9 @@ class RabitMQMonitoring():
       sleep(secs)
 
 if __name__ == "__main__":
-  if len(sys.argv) != 5:
-    sys.stderr.write("usage: " + basename(sys.argv[0]) + "<host> <port> <user> <password>\n")
+  if len(sys.argv) != 6:
+    sys.stderr.write("usage: " + basename(sys.argv[0]) + "<host> <port> <user> <password> <debug>\n")
     sys.exit(1)
   
-  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
   monitor.get_details()

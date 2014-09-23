@@ -1,6 +1,6 @@
 {
     "description": "Extracts metrics from a RabbitMQ instance",
-    "command": "python rabbitmq_monitoring.py $(hostname) $(port) $(user) $(password)",
+    "command": "python rabbitmq_monitoring.py $(hostname) $(port) $(user) $(password) $(debug)",
     "metrics" : ["RABBITMQ_TOTAL_QUEUE",
                  "RABBITMQ_TOTAL_EXCHANGES",
                  "RABBITMQ_TOTAL_CONSUMERS",
@@ -63,6 +63,14 @@
             "description": "Password to authenticate with",
             "type": "string",
             "default": "",
+            "required": true
+        },
+        {
+            "title": "Debug",
+            "name": "debug",
+            "description": "Enables debug logging",
+            "type": "string",
+            "default": false,
             "required": true
         }
     ]
