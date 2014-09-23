@@ -1,5 +1,11 @@
 #!/usr/bin/env python
-#import requests
+"""
+This script extracts metrics from a RabbitMQ instance.
+The usage of this script is as follows:
+
+    rabbitmq_monitoring.py <hostname> <port> <user> <password>
+
+"""
 import json
 from time import sleep
 import collections
@@ -48,9 +54,6 @@ class RabitMQMonitoring():
     response = requests.get(url, auth=(self.user, self.password))
     return response.json()
 
-#  def call_api(self, endpoint):
-#    return self.send_get(self.url + endpoint)
-
   def call_api(self, endpoint):
     url = self.url + endpoint
     auth = b64encode(self.user + ":" + self.password)
@@ -83,8 +86,6 @@ class RabitMQMonitoring():
     if overview:
       data = self.flatten_dict(overview)
       self.print_dict(data)
-
-
 
   def flatten_dict(self, dic, parent_key='', sep='_'):
     items = []
