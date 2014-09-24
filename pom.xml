@@ -12,11 +12,28 @@
   <description>Boundary Plugin extracts metrics from RabbitMQ</description>
   <url>https://github.com/jdgwartney/boundary-plugin-rabbitmq</url>
   <properties>
+    <!-- Plugin versions -->
     <exec-maven-plugin-version>1.3</exec-maven-plugin-version>
+    <maven-compiler-plugin-version>3.1</maven-compiler-plugin-version>
+
+    <!-- Dependency versions -->
     <rabbitmq-client-version>3.3.0</rabbitmq-client-version>
+
+    <!-- JAVA Versions -->
+    <source-java-version>1.7</source-java-version>
+    <target-java-version>1.7</target-java-version>
   </properties>
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin-version}</version>
+        <configuration>
+          <source>${source-java-version}</source>
+          <target>${target-java-version}</target>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>exec-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
