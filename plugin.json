@@ -38,7 +38,7 @@
             "name": "hostname",
             "description": "Hostname of the",
             "type": "string",
-            "default": "",
+            "default": "localhost",
             "required": true
         },
         {
@@ -46,7 +46,7 @@
             "name": "port",
             "description": "The Poll Interval to call the command. Defaults 5 seconds",
             "type": "string",
-            "default": "",
+            "default": "15672",
             "required": true
         },
         {
@@ -54,7 +54,7 @@
             "name": "user",
             "description": "User name to authenticate with",
             "type": "string",
-            "default": "",
+            "default": "guest",
             "required": true
         },
         {
@@ -62,7 +62,7 @@
             "name": "password",
             "description": "Password to authenticate with",
             "type": "string",
-            "default": "",
+            "default": "guest",
             "required": true
         },
         {
