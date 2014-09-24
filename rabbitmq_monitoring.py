@@ -75,8 +75,8 @@ class RabitMQMonitoring():
     for (key, value) in KEY_MAPPING:
       if dic.get(key,"-") != "-":
         print("%s %10s %s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
-        sys.stderr.write("%s %10s %s\n" % (value.upper(), dic.get(key, "-"), dic.get("name")))
-        sys.stderr.flush()
+#        sys.stderr.write("%s %10s %s\n" % (value.upper(), dic.get(key, "-"), dic.get("name")))
+#        sys.stderr.flush()
 
   def get_details(self):
     overview = self.call_api("overview")
@@ -111,7 +111,7 @@ class RabitMQMonitoring():
 
 if __name__ == "__main__":
   if len(sys.argv) != 6:
-    sys.stderr.write("usage: " + basename(sys.argv[0]) + "<host> <port> <user> <password> <debug>\n")
+    sys.stderr.write("usage: " + basename(sys.argv[0]) + " <host> <port> <user> <password> <debug>\n")
     sys.exit(1)
   
   monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
