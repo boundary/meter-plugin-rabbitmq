@@ -27,8 +27,8 @@
     "paramSchema": [
         {
             "title": "Poll Interval",
-            "name": "port",
-            "description": "The Poll Interval to call the command. Defaults 5 seconds",
+            "name": "pollInterval",
+            "description": "The Poll Interval to call the command. Defaults to 5 seconds",
             "type": "string",
             "default": 5,
             "required": false
@@ -36,7 +36,7 @@
         {
             "title": "Hostname",
             "name": "hostname",
-            "description": "Hostname of the",
+            "description": "IP Address or hostname that contains the RabbitMQ instance",
             "type": "string",
             "default": "localhost",
             "required": true
@@ -44,7 +44,7 @@
         {
             "title": "Port",
             "name": "port",
-            "description": "The Poll Interval to call the command. Defaults 5 seconds",
+            "description": "Listening port of the RabbitMQ management plugin",
             "type": "string",
             "default": "5672",
             "required": true
@@ -52,7 +52,7 @@
         {
             "title": "User",
             "name": "user",
-            "description": "User name to authenticate with",
+            "description": "User name to use for authenticate against the RabbitMQ management plugin",
             "type": "string",
             "default": "guest",
             "required": true
@@ -60,7 +60,7 @@
         {
             "title": "Password",
             "name": "password",
-            "description": "Password to authenticate with",
+            "description": "Password to use for authenticate against the RabbitMQ management plugin",
             "type": "string",
             "default": "guest",
             "required": true
