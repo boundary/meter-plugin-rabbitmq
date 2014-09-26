@@ -1,4 +1,4 @@
-Boundary RabbitMQ Plugin
+ooundary RabbitMQ Plugin
 =======================
 
 Boundary RabbitMQ plugin extracts key performance metrics from an instance of RabbitMQ instances
@@ -64,6 +64,36 @@ Here are the list of dashboards that are created when the RabbitMQ plugin is ins
 
 ## Configuration
 
-Once the RabbitMQ plugin is install, metric collection requires that a _relay_ is installed on the target system. Instructions on how to install a relay for linux/unix can found [here](http://premium-documentation.boundary.com/relays), and for Windows [here](http://premium-support.boundary.com/customer/portal/articles/1656465-installing-relay-on-windows).
+Once the RabbitMQ plugin is install, metric collection requires that a _relay_ is installed on the target system. Instructions on how to install a relay for linux/unix can found[here](http://premium-documentation.boundary.com/relays), and for Windows [here](http://premium-support.boundary.com/customer/portal/articles/1656465-installing-relay-on-windows).
+
+
+You must use a RabbitMQ user with monitor rights.
 
 General operations for plugins are describe in this [article](http://premium-support.boundary.com/customer/portal/articles/1635550-plugins---how-to)
+
+## Glossary
+
+**binding** - Relates an exchange to a queue by a routing key.
+
+**channel** - A logical connection that shares a single AMPQ connection to RabbitMQ. channels, you have the ability to create as many parallel transport layers as your app needs without being limited by TCP connection restrictions.
+
+**consumer** - Attaches to RabbitMQ server and subscribes to a queue (or named mailbox).
+
+**exchange** - Here come into play the different types of exchanges provided by the protocol. There are four: direct, fanout, topic, and headers. Each implements a different routing algorithm. Messages are sent to exchanges. There are three exchange types: direct, fanout, and topic. Based on the message routing key and the exchange type, the broker will
+decide to which queue it has to deliver the message.
+
+**producer** - Create messages and publish (send) them to RabbitMQ
+
+**queue** -
+
+**vhost** - Within every RabbitMQ server there is an ability to create virtual message brokers or _vhosts_. Each one is essentially a mini-RabbitMQ server with its own queues, exchanges, bindings, and access control. Permits the paritioning of a single RabbitMQ server so that it can be used for multiple applications without worrying about applications deleting each others queues,etc.
+
+## Bibliography
+
+1. [RabbitMQ API reference 3.3.5](http://hg.rabbitmq.com/rabbitmq-management/raw-file/rabbitmq_v3_3_5/priv/www/api/index.html)
+2. [RabbitMQ Management HTTP Stats](http://hg.rabbitmq.com/rabbitmq-management/raw-file/31c1d2668d39/priv/www/doc/stats.html)
+2. [RabbitMQ In Action](http://www.manning.com/videla/)
+3. [RabbitMQ Cookbook](https://www.packtpub.com/application-development/rabbitmq-cookbook)
+4. [RabbitMQ How-To](http://www.rabbitmq.com/how.html)
+5. [RabbitMQ Nagios Plugin](https://github.com/jamesc/nagios-plugins-rabbitmq)
+
