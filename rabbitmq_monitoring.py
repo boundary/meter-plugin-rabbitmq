@@ -13,6 +13,7 @@ import sys
 from os.path import basename
 import urllib2
 from base64 import b64encode
+from string import replace
 
 KEY_MAPPING = [
   ("object_totals_queues", "RabbitMQ_Total_Queues"),
@@ -42,12 +43,11 @@ KEY_MAPPING = [
 
 class RabitMQMonitoring():
 
-  def __init__(self,host,port,user,password,debug):
+  def __init__(self,host,port,user,password):
      self.host = host
      self.port = port
      self.user = user
      self.password = password
-     self.debug = debug
      self.url = "http://" + self.host + ":" + self.port + "/api/"
 
   def send_get(self,url):
@@ -74,7 +74,8 @@ class RabitMQMonitoring():
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
       if dic.get(key,"-") != "-":
-        print("%s %10s %s" % (value.upper(), dic.get(key, "-"), dic.get("name")))
+        name = replace(dic.get("name"),"@",":")
+        print("%s %10s %s" % (value.upper(), dic.get(key, "-"), name))
 #        sys.stderr.write("%s %10s %s\n" % (value.upper(), dic.get(key, "-"), dic.get("name")))
 #        sys.stderr.flush()
 
@@ -110,9 +111,9 @@ class RabitMQMonitoring():
       sleep(secs)
 
 if __name__ == "__main__":
-  if len(sys.argv) != 6:
-    sys.stderr.write("usage: " + basename(sys.argv[0]) + " <host> <port> <user> <password> <debug>\n")
+  if len(sys.argv) != 5:
+    sys.stderr.write("usage: " + basename(sys.argv[0]) + " <host> <port> <user> <password>\n")
     sys.exit(1)
   
-  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
   monitor.get_details()

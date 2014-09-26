@@ -1,1 +1,1 @@
-ec2-54-164-98-96.compute-1.amazonaws.com 15672 guest guest false
+ec2-54-164-98-96.compute-1.amazonaws.com 15672 guest guest
