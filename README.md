@@ -1,5 +1,5 @@
-ooundary RabbitMQ Plugin
-=======================
+Boundary RabbitMQ Plugin
+========================
 
 Boundary RabbitMQ plugin extracts key performance metrics from an instance of RabbitMQ instances
 
@@ -8,12 +8,12 @@ The RabbitMQ plugin requires that you have python 2.6.6 or later installed on th
 ## Metrics
 Here are the list of metrics created when the RabbitMQ plugin is installed along with their descriptions.
 
-| Metric                                        | Description |
-|-----------------------------------------------|-------------|
-|RABBITMQ\_TOTAL\_EXCHANGES                     | |
-|RABBITMQ\_TOTAL\_CONSUMERS                     | |
-|RABBITMQ\_TOTAL\_CONNECTIONS                   | |
-|RABBITMQ\_MESSAGES\_PUSH\_TOTAL                | |
+| Metric Name                                   |Display Name                  |Description |
+|-----------------------------------------------|------------------------------|------------|
+|RABBITMQ\_TOTAL\_EXCHANGES                     |RabbitMQ - Total Exchanges    |            |
+|RABBITMQ\_TOTAL\_CONSUMERS                     |RabbitMQ - Total Consumers    |Number of consumers connected to the RabbitMQ broker|
+|RABBITMQ\_TOTAL\_CONNECTIONS                   |RabbitMQ - Total Connections  |
+|RABBITMQ\_MESSAGES\_PUSH\_TOTAL                |RabbitMQ - Messages Push Total|
 |RABBITMQ\_MESSAGES\_PUSH\_RATE                 | |
 |RABBITMQ\_MESSAGES\_PUSHED\_WITH\_NO\_ACK      | |
 |RABBITMQ\_MESSAGES\_PUSHED\_WITH\_NO\_ACK\_RATE| |
@@ -81,6 +81,8 @@ General operations for plugins are describe in this [article](http://premium-sup
 
 **exchange** - Here come into play the different types of exchanges provided by the protocol. There are four: direct, fanout, topic, and headers. Each implements a different routing algorithm. Messages are sent to exchanges. There are three exchange types: direct, fanout, and topic. Based on the message routing key and the exchange type, the broker will
 decide to which queue it has to deliver the message.
+
+**node** - Erlang term
 
 **producer** - Create messages and publish (send) them to RabbitMQ
 
