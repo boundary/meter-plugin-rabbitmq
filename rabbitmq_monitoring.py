@@ -14,6 +14,7 @@ from os.path import basename
 import urllib2
 from base64 import b64encode
 from string import replace
+from pprint import pprint
 
 #
 # Maps the API path names to Boundary Metric Identifiers
@@ -46,13 +47,13 @@ KEY_MAPPING = [
 
 class RabitMQMonitoring():
 
-  def __init__(self,pollInterval,host,port,user,password):
-     self.pollInterval = float(pollInterval)/1000.0
-     self.host = host
-     self.port = port
-     self.user = user
-     self.password = password
-     self.url = "http://" + self.host + ":" + self.port + "/api/"
+  def __init__(self):
+     self.pollInterval = None
+     self.hostname = None
+     self.port = None
+     self.user = None
+     self.password = None
+     self.url = None
 
   def send_get(self,url):
     response = requests.get(url, auth=(self.user, self.password))
@@ -108,16 +109,27 @@ class RabitMQMonitoring():
   def extractMetrics(self):
     self.get_details()
 
+  def get_configuration(self):
+    '''
+    1) Reads the param.json file that contains the configuration of the plugin.
+    2) Sets the values to member variables of the class instance.
+    '''
+    with open('param.json') as f:
+      parameters = json.loads(f.read())
+      pprint(parameters)
+      self.hostname = parameters['hostname']
+      self.port = parameters['port']
+      self.pollInterval = parameters['pollInterval']
+      self.user = parameters['user']
+      self.password = parameters['password']
+      self.url = "http://" + self.hostname + ":" + self.port + "/api/"
+
   def continuous_monitoring(self):
     while True:
       self.get_details()
       sleep(float(self.pollInterval))
 
 if __name__ == "__main__":
-  if len(sys.argv) != 6:
-    sys.stderr.write("usage: " + basename(sys.argv[0]) + " <pollInterval> <host> <port> <user> <password>\n")
-    sys.exit(1)
-  
-  sys.stderr.write("pollInterval: " + sys.argv[1] + "\n")
-  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+  monitor = RabitMQMonitoring()
+  monitor.get_configuration()
   monitor.continuous_monitoring()
