@@ -69,8 +69,8 @@ class RabitMQMonitoring():
     try:
         response = urllib2.urlopen(request)
     except urllib2.URLError as e:
-        sys.stderr.write("Error connecting to host: %s (%d), Error: %s",
-                  getattr(e, "reason", "Unknown Reason"),e.errno, h.message)
+        sys.stderr.write("Error connecting to host: {0} ({1}), Error: {2}".format(self.host,e.errno,e.message))
+        raise
     except urllib2.HTTPError as e:
         sys.stderr.write("Error getting data from AWS Cloud Watch API: %s (%d), Error: %s",
                   getattr(h, "reason", "Unknown Reason"),h.code, h.read())
