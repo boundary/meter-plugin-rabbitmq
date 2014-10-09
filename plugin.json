@@ -1,5 +1,5 @@
 {
-    "description": "Extracts metrics from a RabbitMQ instance",
+    "description": "Awaiting Certification - Extracts metrics from a RabbitMQ instance",
     "command": "python rabbitmq_monitoring.py $(hostname) $(port) $(user) $(password) $(debug)",
     "metrics" : ["RABBITMQ_TOTAL_QUEUE",
                  "RABBITMQ_TOTAL_EXCHANGES",
