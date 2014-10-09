@@ -1,6 +1,6 @@
 {
     "description": "Awaiting Certification - Extracts metrics from a RabbitMQ instance",
-    "command": "python rabbitmq_monitoring.py $(hostname) $(port) $(user) $(password) $(debug)",
+    "command": "python rabbitmq_monitoring.py $(pollInterval) $(hostname) $(port) $(user) $(password)",
     "metrics" : ["RABBITMQ_TOTAL_QUEUE",
                  "RABBITMQ_TOTAL_EXCHANGES",
                  "RABBITMQ_TOTAL_CONSUMERS",
@@ -64,14 +64,6 @@
             "type": "string",
             "default": "guest",
             "required": true
-        },
-        {
-            "title": "Debug",
-            "name": "debug",
-            "description": "Enables debug logging",
-            "type": "boolean",
-            "default": false,
-            "required": false
         }
     ]
 }
