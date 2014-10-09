@@ -3,7 +3,7 @@
 This script extracts metrics from a RabbitMQ instance.
 The usage of this script is as follows:
 
-    rabbitmq_monitoring.py <hostname> <port> <user> <password>
+    rabbitmq_monitoring.py <pollInterval> <hostname> <port> <user> <password>
 
 """
 import json
@@ -15,35 +15,39 @@ import urllib2
 from base64 import b64encode
 from string import replace
 
+#
+# Maps the API path names to Boundary Metric Identifiers
+#
 KEY_MAPPING = [
-  ("object_totals_queues", "RabbitMQ_Total_Queues"),
-  ("object_totals_channels", "RabbitMQ_Total_Channels"),
-  ("object_totals_exchanges", "RabbitMQ_Total_Exchanges"),
-  ("object_totals_consumers", "RabbitMQ_Total_Consumers"),
-  ("object_totals_connections", "RabbitMQ_Total_Connections"),
-  ("message_stats_deliver", "RabbitMQ_Messages_Push_Total"),
-  ("message_stats_deliver_details_rate", "RabbitMQ_Messages_Push_Rate"),
-  ("message_stats_deliver_no_ack", "RabbitMQ_Messages_Pushed_With_No_Ack"),
-  ("message_stats_deliver_no_ack_details_rate", "RabbitMQ_Messages_Pushed_With_No_Ack_Rate"),
-  ("message_stats_deliver_get", "RabbitMQ_Messages_Pulled"),
-  ("message_stats_deliver_get_details_rate", "RabbitMQ_Messages_Total_Push_Pull_Rate"),
-  ("message_stats_redeliver", "RabbitMQ_Messages_Redelivered"),
-  ("message_stats_redeliver_details_rate", "RabbitMQ_Messages_Redelivery_Rate"),
-  ("message_stats_publish", "RabbitMQ_Messages_Published"),
-  ("message_stats_publish_details_rate", "RabbitMQ_Messages_Publish_Rate"),
-  ("queue_totals_messages", "RabbitMQ_Queue_Total_Messages"),
-  ("queue_totals_messages_details_rate", "RabbitMQ_Queue_Message_Rate"),
-  ("queue_totals_messages_ready", "RabbitMQ_Queue_Messages_Ready"),
-  ("queue_totals_messages_ready_details_rate", "RabbitMQ_Queue_Ready_Messages_Rate"),
-  ("queue_totals_messages_unacknowledged", "RabbitMQ_Queued_Un_Ack_Messages"),
-  ("queue_totals_messages_unacknowledged_details_rate","RabbitMQ_Queue_Un_Ack_Messages_Rate"),
-  ("mem_used", "RabbitMQ_Memory_Used"),
-  ("disk_free", "RabbitMQ_Disk_Free")
+  ("object_totals_queues", "RABBITMQ_TOTAL_QUEUES"),
+  ("object_totals_channels", "RABBITMQ_TOTAL_CHANNELS"),
+  ("object_totals_exchanges", "RABBITMQ_TOTAL_EXCHANGES"),
+  ("object_totals_consumers", "RABBITMQ_TOTAL_CONSUMERS"),
+  ("object_totals_connections", "RABBITMQ_TOTAL_CONNECTIONS"),
+  ("message_stats_deliver", "RABBITMQ_STATS_DELIVER"),
+  ("message_stats_deliver_details_rate", "RABBITMQ_STATS_DELIVER_DETAILS_RATE"),
+  ("message_stats_deliver_no_ack", "RABBITMQ_MESSAGES_STATS_DELIVER_NO_ACK"),
+  ("message_stats_deliver_no_ack_details_rate", "RABBITMQ_MESSAGES_STATS_DELIVER_NO_ACK_DETAILS_RATE"),
+  ("message_stats_deliver_get", "RABBITMQ_STATS_DELIVER_GET"),
+  ("message_stats_deliver_get_details_rate", "RABBITMQ_MESSAGE_STATS_DELIVER_GET_DETAILS_RATE"),
+  ("message_stats_redeliver", "RABBITMQ_STATS_REDELIVER"),
+  ("message_stats_redeliver_details_rate", "RABBITMQ_STATS_REDELIVER_DETAILS_RATE"),
+  ("message_stats_publish", "RABBITMQ_MESSAGE_STATS_PUBLISH"),
+  ("message_stats_publish_details_rate", "RABBITMQ_STATS_PUBLISH_DETAILS_RATE"),
+  ("queue_totals_messages", "RABBITMQ_QUEUE_TOTALS_MESSAGES"),
+  ("queue_totals_messages_details_rate", "RABBITMQ_QUEUE_TOTAL_MESSAGES_DETAILS_RATE"),
+  ("queue_totals_messages_ready", "RABBITMQ_QUEUE_TOTAL_MESSAGES_READY"),
+  ("queue_totals_messages_ready_details_rate", "RABBITMQ_TOTALS_MESSAGES_READY_DETAILS_RATE"),
+  ("queue_totals_messages_unacknowledged", "RABBITMQ_TOTALS_MESSAGES_UNACKNOWLEDGED"),
+  ("queue_totals_messages_unacknowledged_details_rate","RABBITMQ_QUEUE_TOTALS_MESSAGES_UNACKNOWLEDGED_DETAILS_RATE"),
+  ("mem_used","RABBITMQ_MEM_USED"),
+  ("disk_free","RABBITMQ_DISK_FREE")
   ]
 
 class RabitMQMonitoring():
 
-  def __init__(self,host,port,user,password):
+  def __init__(self,pollInterval,host,port,user,password):
+     self.pollInterval = pollInterval
      self.host = host
      self.port = port
      self.user = user
@@ -64,12 +68,12 @@ class RabitMQMonitoring():
     request = urllib2.Request(url,headers=headers)
     try:
         response = urllib2.urlopen(request)
-    except urllib2.URLError as h:
+    except urllib2.URLError as e:
         sys.stderr.write("Error connecting to host: %s (%d), Error: %s",
-                  getattr(h, "reason", "Unknown Reason"),h.code, h.read())
+                  getattr(e, "reason", "Unknown Reason"),e.errno, h.message)
     except urllib2.HTTPError as e:
         sys.stderr.write("Error getting data from AWS Cloud Watch API: %s (%d), Error: %s",
-                  getattr(e, "reason", "Unknown Reason"),e.code, e.read())
+                  getattr(h, "reason", "Unknown Reason"),h.code, h.read())
         raise
 
     return json.load(response)
@@ -78,7 +82,7 @@ class RabitMQMonitoring():
     for (key, value) in KEY_MAPPING:
       if dic.get(key,"-") != "-":
         name = replace(dic.get("name"),"@",":")
-        print("%s %10s %s" % (value.upper(), dic.get(key, "-"), name))
+        print("%s %s %s" % (value.upper(), dic.get(key, "-"), name))
 #        sys.stderr.write("%s %10s %s\n" % (value.upper(), dic.get(key, "-"), dic.get("name")))
 #        sys.stderr.flush()
 
@@ -106,17 +110,15 @@ class RabitMQMonitoring():
   def extractMetrics(self):
     self.get_details()
 
-  def continuous_monitoring(self, secs):
-    print("Continuously monitoring at every %d seconds" % (secs))
+  def continuous_monitoring(self):
     while True:
-      self.get_details(self.print_dict)
-      print("\n\n")
-      sleep(secs)
+      self.get_details()
+      sleep(float(self.pollInterval))
 
 if __name__ == "__main__":
-  if len(sys.argv) != 5:
-    sys.stderr.write("usage: " + basename(sys.argv[0]) + " <host> <port> <user> <password>\n")
+  if len(sys.argv) != 6:
+    sys.stderr.write("usage: " + basename(sys.argv[0]) + " <pollInterval> <host> <port> <user> <password>\n")
     sys.exit(1)
   
-  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
-  monitor.get_details()
+  monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+  monitor.continuous_monitoring()
