@@ -47,7 +47,7 @@ KEY_MAPPING = [
 class RabitMQMonitoring():
 
   def __init__(self,pollInterval,host,port,user,password):
-     self.pollInterval = pollInterval
+     self.pollInterval = float(pollInterval)/1000.0
      self.host = host
      self.port = port
      self.user = user
@@ -118,5 +118,6 @@ if __name__ == "__main__":
     sys.stderr.write("usage: " + basename(sys.argv[0]) + " <pollInterval> <host> <port> <user> <password>\n")
     sys.exit(1)
   
+  sys.stderr.write("pollInterval: " + sys.argv[1] + "\n")
   monitor = RabitMQMonitoring(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
   monitor.continuous_monitoring()
