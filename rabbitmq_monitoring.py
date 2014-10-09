@@ -20,7 +20,7 @@ from string import replace
 #
 KEY_MAPPING = [
   ("object_totals_queues", "RABBITMQ_OBJECT_TOTALS_QUEUES"),
-  ("object_totals_channels", "RABBITMQ_OBJECT_TOTALS_TOTAL_CHANNELS"),
+  ("object_totals_channels", "RABBITMQ_OBJECT_TOTALS_CHANNELS"),
   ("object_totals_exchanges", "RABBITMQ_OBJECT_TOTALS_EXCHANGES"),
   ("object_totals_consumers", "RABBITMQ_OBJECT_TOTALS_CONSUMERS"),
   ("object_totals_connections", "RABBITMQ_OBJECT_TOTALS_CONNECTIONS"),
@@ -83,8 +83,6 @@ class RabitMQMonitoring():
       if dic.get(key,"-") != "-":
         name = replace(dic.get("name"),"@",":")
         print("%s %s %s" % (value.upper(), dic.get(key, "-"), name))
-#        sys.stderr.write("%s %10s %s\n" % (value.upper(), dic.get(key, "-"), dic.get("name")))
-#        sys.stderr.flush()
 
   def get_details(self):
     overview = self.call_api("overview")
