@@ -1,1 +1,1 @@
-localhost 15672 guest guest
+5 localhost 15672 guest guest
