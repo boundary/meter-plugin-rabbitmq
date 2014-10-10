@@ -3,7 +3,7 @@
 This script extracts metrics from a RabbitMQ instance.
 The usage of this script is as follows:
 
-    rabbitmq_monitoring.py <pollInterval> <hostname> <port> <user> <password>
+    rabbitmq_monitoring.py
 
 """
 import json
@@ -14,7 +14,6 @@ from os.path import basename
 import urllib2
 from base64 import b64encode
 from string import replace
-from pprint import pprint
 
 #
 # Maps the API path names to Boundary Metric Identifiers
@@ -116,10 +115,9 @@ class RabitMQMonitoring():
     '''
     with open('param.json') as f:
       parameters = json.loads(f.read())
-      pprint(parameters)
       self.hostname = parameters['hostname']
       self.port = parameters['port']
-      self.pollInterval = parameters['pollInterval']
+      self.pollInterval = float(parameters['pollInterval'])/1000.0
       self.user = parameters['user']
       self.password = parameters['password']
       self.url = "http://" + self.hostname + ":" + self.port + "/api/"

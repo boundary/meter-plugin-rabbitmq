@@ -31,9 +31,9 @@
         {
             "title": "Poll Interval",
             "name": "pollInterval",
-            "description": "The Poll Interval to call the command. Defaults to 1 second",
+            "description": "The Poll Interval to call the command in milliseconds. Defaults to 1000 milliseconds",
             "type": "string",
-            "default": 1,
+            "default": 1000,
             "required": false
         },
         {
