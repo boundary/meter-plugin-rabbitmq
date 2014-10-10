@@ -52,7 +52,7 @@
                 <argument>PUT</argument>
                 <argument>-u</argument>
                 <argument>${boundary-metrics-user}:${boundary-metrics-password}</argument>
-                <argument>https://premium-api.boundary.com/v1/plugins/private/${project.name}/boundary/${project.artifactId}</argument>
+                <argument>https://${boundary-metrics-api-host}/v1/plugins/private/${project.name}/boundary/${project.artifactId}</argument>
               </arguments>
             </configuration>
           </execution>
