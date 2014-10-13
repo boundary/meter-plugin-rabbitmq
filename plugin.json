@@ -26,7 +26,9 @@
                  "RABBITMQ_MEM_USED",
                  "RABBITMQ_DISK_FREE"
                 ],
-    "postExtractTimeout": 10000,
+"dashboards" : [
+                {"name" : "RabbitMQ", "layout" : "d-w=3&d-h=2&d-pad=5&d-bg=none&d-g-RABBITMQ_MEM_USED=2-0-1-1&d-g-RABBITMQ_MESSAGE_STATS_DELIVER_GET_DETAILS_RATE=0-1-1-1&d-g-RABBITMQ_MESSAGE_STATS_DELIVER_NO_ACK=1-0-1-1&d-g-RABBITMQ_OBJECT_TOTALS_CHANNELS=0-0-1-1-t&d-g-RABBITMQ_OBJECT_TOTALS_CONNECTIONS=0-0-1-1-b&d-g-RABBITMQ_OBJECT_TOTALS_CONSUMERS=1-1-1-1-t&d-g-RABBITMQ_OBJECT_TOTALS_EXCHANGES=1-1-1-1-b&d-g-RABBITMQ_QUEUE_TOTALS_MESSAGES=2-1-1-1" 
+                } ],
     "paramSchema": [
         {
             "title": "Poll Interval",
