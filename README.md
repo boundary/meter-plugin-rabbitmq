@@ -41,10 +41,7 @@ Here are the list of dashboards that are created when the RabbitMQ plugin is ins
 
 |Dashboard           | Description                                      |
 |:-------------------|--------------------------------------------------|
-|_RabbitMQ Summary_  |Contains summary metrics related to RabbitMQ      |
-|_RabbitMQ Messages_ |Contains metrics related to RabbitMQ messages     |
-|_RabbitMQ Queues_   |Contains metrics related to RabbitMQ queues       |
-|_RabbitMQ Resources_|Contains metrics related to the RabbitMQ resources|
+|_RabbitMQ_          |Contains metrics related to RabbitMQ              |
 
 ## Adding the RabbitMQ Plugin to Premium Boundary
 
