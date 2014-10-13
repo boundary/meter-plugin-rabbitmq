@@ -36,7 +36,6 @@ Here are the list of metrics created when the RabbitMQ plugin is installed along
 |RabbitMQ - Queue Total Messages Unacknowledged Details Rate|RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_UNACKNOWLEDGED\_DETAILS\_RATE|RabbitMQ - Queue Total Messages Unacknowledged Details Rate|
 |RabbitMQ - Memory Used                                     |RABBITMQ\_MEM\_USED                                             |RabbitMQ - Memory Used                                     |
 |RabbitMQ - Disk Free                                       |RABBITMQ\_DISK\_FREE                                            |RabbitMQ - Disk Free                                       |
-
 ## Dashboards
 Here are the list of dashboards that are created when the RabbitMQ plugin is installed with their descriptions.
 
