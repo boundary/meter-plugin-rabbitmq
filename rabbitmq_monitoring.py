@@ -81,7 +81,7 @@ class RabitMQMonitoring():
   def print_dict(self, dic):
     for (key, value) in KEY_MAPPING:
       if dic.get(key,"-") != "-":
-        name = replace(dic.get("name"),"@",":")
+        name = dic.get("name")
         print("%s %s %s" % (value.upper(), dic.get(key, "-"), name))
 
   def get_details(self):
