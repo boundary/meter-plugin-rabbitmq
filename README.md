@@ -12,30 +12,30 @@ Boundary RabbitMQ plugin extracts key performance metrics from an instance of Ra
 ## Metrics
 Here are the list of metrics created when the RabbitMQ plugin is installed along with their descriptions.
 
-|Metric Name                                                 |Metric Identifier                                               |Description                                                 |
-|:-----------------------------------------------------------|:---------------------------------------------------------------|:-----------------------------------------------------------|
-|RabbitMQ - Object Totals Channels                           |RABBITMQ\_OBJECT\_TOTALS\_CHANNELS                              |RabbitMQ - Object Totals Channels                           |
-|RabbitMQ - Object Totals Exchanges                          |RABBITMQ\_OBJECT\_TOTALS\_EXCHANGES                             |RabbitMQ - Object Totals Exchanges                          |
-|RabbitMQ - Object Totals Consumers                          |RABBITMQ\_OBJECT\_TOTALS\_CONSUMERS                             |RabbitMQ - Object Totals Consumers                          |
-|RabbitMQ - Object Totals Connections                        |RABBITMQ\_OBJECT\_TOTALS\_CONNECTIONS                           |RabbitMQ - Object Totals Connections                        |
-|RabbitMQ - Message Deliver                                  |RABBITMQ\_MESSAGE\_STATS\_DELIVER                               |RabbitMQ - Message Deliver                                  |
-|RabbitMQ - Message Stats Deliver Rate                       |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_DETAILS\_RATE                |RabbitMQ - Message Stats Deliver Details Rate               |
-|RabbitMQ - Message Stats Deliver No Ack                     |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_NO\_ACK                      |RabbitMQ - Message Stats Deliver No Ack                     |
-|RabbitMQ - Message Stats Deliver No Ack                     |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_NO\_ACK\_DETAILS\_RATE       |RabbitMQ - Message Stats Deliver No Ack                     |
-|RabbitMQ - Message Deliver Get                              |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_GET                          |RabbitMQ - Message Deliver Get                              |
-|RabbitMQ - Message Deliver Get Rate                         |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_GET\_DETAILS\_RATE           |RabbitMQ - Message Deliver Get Rate                         |
-|RabbitMQ - Message Stats Redeliver                          |RABBITMQ\_MESSAGE\_STATS\_REDELIVER                             |RabbitMQ - Message Stats Redeliver                          |
-|RabbitMQ - Message Stats Redeliver Details Rate             |RABBITMQ\_MESSAGE\_STATS\_REDELIVER\_DETAILS\_RATE              |RabbitMQ - Message Stats Redeliver Details Rate             |
-|RabbitMQ - Message Stats Publish                            |RABBITMQ\_MESSAGE\_STATS\_PUBLISH                               |RabbitMQ - Message Stats Publish                            |
-|RabbitMQ - Message Stats Publish Details Rate               |RABBITMQ\_MESSAGE\_STATS\_PUBLISH\_DETAILS\_RATE                |RabbitMQ - Message Stats Publish Details Rate               |
-|RabbitMQ - Queue Totals Messages                            |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES                               |RabbitMQ - Queue Totals Messages                            |
-|RabbitMQ - Queue Totals Messages Details Rate               |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_DETAILS\_RATE                |RabbitMQ - Queue Totals Messages Details Rate               |
-|RabbitMQ - Totals Messages Ready                            |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_READY                        |RabbitMQ - Totals Messages Ready                            |
-|RabbitMQ - Queue Totals Messages Ready Details Rate         |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_READY\_DETAILS\_RATE         |RabbitMQ - Queue Totals Messages Ready Details Rate         |
-|RabbitMQ - Queue Totals Messages Unacknowledged             |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_UNACKNOWLEDGED               |RabbitMQ - Queue Totals Messages Unacknowledged             |
-|RabbitMQ - Queue Totals Messages Unacknowledged Details Rate|RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_UNACKNOWLEDGED\_DETAILS\_RATE|RabbitMQ - Queue Totals Messages Unacknowledged Details Rate|
-|RabbitMQ - Memory Used                                      |RABBITMQ\_MEM\_USED                                             |RabbitMQ - Memory Used                                      |
-|RabbitMQ - Disk Free                                        |RABBITMQ\_DISK\_FREE                                            |RabbitMQ - Disk Free                                        |
+|Metric Name                                                |Metric Identifier                                               |Description                                                |
+|:----------------------------------------------------------|:---------------------------------------------------------------|:----------------------------------------------------------|
+|RabbitMQ - Total Channels                                  |RABBITMQ\_OBJECT\_TOTALS\_CHANNELS                              |RabbitMQ - Total Channels                                  |
+|RabbitMQ - Total Exchanges                                 |RABBITMQ\_OBJECT\_TOTALS\_EXCHANGES                             |RabbitMQ - Total Exchanges                                 |
+|RabbitMQ - Total Consumers                                 |RABBITMQ\_OBJECT\_TOTALS\_CONSUMERS                             |RabbitMQ - Total Consumers                                 |
+|RabbitMQ - Total Connections                               |RABBITMQ\_OBJECT\_TOTALS\_CONNECTIONS                           |RabbitMQ - Total Connections                               |
+|RabbitMQ - Messages Delivered                              |RABBITMQ\_MESSAGE\_STATS\_DELIVER                               |RabbitMQ - Messages Delivered                              |
+|RabbitMQ - Messages Delivered Rate                         |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_DETAILS\_RATE                |RabbitMQ - Messages Delivered Rate                         |
+|RabbitMQ - Messages Delivered No Ack                       |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_NO\_ACK                      |RabbitMQ - Messages Delivered No Ack                       |
+|RabbitMQ - Messages Delivered No Ack Rate                  |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_NO\_ACK\_DETAILS\_RATE       |RabbitMQ - Messages Delivered No Ack Rate                  |
+|RabbitMQ - Messages Delivered Get                          |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_GET                          |RabbitMQ - Messages Delivered Get                          |
+|RabbitMQ - Messages Delivered Get Rate                     |RABBITMQ\_MESSAGE\_STATS\_DELIVER\_GET\_DETAILS\_RATE           |RabbitMQ - Messages Delivered Get Rate                     |
+|RabbitMQ - Messages Redelivered                            |RABBITMQ\_MESSAGE\_STATS\_REDELIVER                             |RabbitMQ - Messages Redelivered                            |
+|RabbitMQ - Messages Redelivered Rate                       |RABBITMQ\_MESSAGE\_STATS\_REDELIVER\_DETAILS\_RATE              |RabbitMQ - Messages Redelivered Rate                       |
+|RabbitMQ - Messages Published                              |RABBITMQ\_MESSAGE\_STATS\_PUBLISH                               |RabbitMQ - Messages Published                              |
+|RabbitMQ - Messages Published Rate                         |RABBITMQ\_MESSAGE\_STATS\_PUBLISH\_DETAILS\_RATE                |RabbitMQ - Messages Published Rate                         |
+|RabbitMQ - Queue Total Messages                            |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES                               |RabbitMQ - Queue Total Messages                            |
+|RabbitMQ - Queue Total Messages Rate                       |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_DETAILS\_RATE                |RabbitMQ - Queue Total Messages Rate                       |
+|RabbitMQ - Queue Total Messages Ready                      |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_READY                        |RabbitMQ - Queue Total Messages Ready                      |
+|RabbitMQ - Queue Total Messages Ready Rate                 |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_READY\_DETAILS\_RATE         |RabbitMQ - Queue Total Messages Ready Rate                 |
+|RabbitMQ - Queue Total Messages Unacknowledged             |RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_UNACKNOWLEDGED               |RabbitMQ - Queue Total Messages Unacknowledged             |
+|RabbitMQ - Queue Total Messages Unacknowledged Details Rate|RABBITMQ\_QUEUE\_TOTALS\_MESSAGES\_UNACKNOWLEDGED\_DETAILS\_RATE|RabbitMQ - Queue Total Messages Unacknowledged Details Rate|
+|RabbitMQ - Memory Used                                     |RABBITMQ\_MEM\_USED                                             |RabbitMQ - Memory Used                                     |
+|RabbitMQ - Disk Free                                       |RABBITMQ\_DISK\_FREE                                            |RabbitMQ - Disk Free                                       |
 
 ## Dashboards
 Here are the list of dashboards that are created when the RabbitMQ plugin is installed with their descriptions.
