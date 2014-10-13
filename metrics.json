@@ -125,7 +125,7 @@
             "defaultResolutionMS": 0,
             "description": "RabbitMQ - Total Channels",
             "displayName": "RabbitMQ - Total Channels",
-            "displayNameShort": "RMQ - Total Channels",
+            "displayNameShort": "RMQ - Tot Channels",
             "isDisabled": 0,
             "name": "RABBITMQ_OBJECT_TOTALS_CHANNELS",
             "unit": "number"
