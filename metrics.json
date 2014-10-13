@@ -95,7 +95,7 @@
             "defaultResolutionMS": 0,
             "description": "RabbitMQ - Messages Published Rate",
             "displayName": "RabbitMQ - Messages Published Rate",
-            "displayNameShort": "RMQ Msg Pub Rt",
+            "displayNameShort": "RMQ - Msg Pub Rt",
             "isDisabled": 0,
             "name": "RABBITMQ_MESSAGE_STATS_PUBLISH_DETAILS_RATE",
             "unit": "number"
