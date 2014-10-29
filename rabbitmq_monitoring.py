@@ -83,6 +83,7 @@ class RabitMQMonitoring():
       if dic.get(key,"-") != "-":
         name = dic.get("name")
         print("%s %s %s" % (value.upper(), dic.get(key, "-"), name))
+        sys.stdout.flush()
 
   def get_details(self):
     overview = self.call_api("overview")
