@@ -3,6 +3,7 @@
     "command": "python rabbitmq_monitoring.py",
     "icon": "icon.png",
     "metrics" : [
+                 "RABBITMQ_OBJECT_TOTALS_QUEUES",
                  "RABBITMQ_OBJECT_TOTALS_CHANNELS",
                  "RABBITMQ_OBJECT_TOTALS_EXCHANGES",
                  "RABBITMQ_OBJECT_TOTALS_CONSUMERS",
