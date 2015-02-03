@@ -6,13 +6,23 @@ Boundary RabbitMQ Plugin
 Collects performance metrics from an instance of RabbitMQ.
 
 ### Prerequisites
-* Python 2.6.6 or later installed on the target system.
-* Credentials for a RabbitMQ user with monitor rights.
+
+|     OS    | Linux | Windows | SmartOS | OS X |
+|:----------|:-----:|:-------:|:-------:|:----:|
+| Supported |   v   |    v    |    v    |  v   |
+
+
+|  Runtime | node.js | Python | Java |
+|:---------|:-------:|:------:|:----:|
+| Required |         |    +   |      |
+
+- [How to install node.js?](https://help.boundary.com/hc/articles/202360701)
+- Credentials for a RabbitMQ user with monitor rights.
 
 ### Plugin Setup
 None
 
-### Plugin Configuration Fields
+#### Plugin Configuration Fields
 
 |Field Name   |Description                                                                         |
 |:------------|:-----------------------------------------------------------------------------------|
@@ -49,5 +59,3 @@ None
 |RabbitMQ - Queue Total Messages Unacknowledged Details Rate|RabbitMQ - Queue Total Messages Unacknowledged Details Rate|
 |RabbitMQ - Memory Used                                     |RabbitMQ - Memory Used                                     |
 |RabbitMQ - Disk Free                                       |RabbitMQ - Disk Free                                       |
-
-
