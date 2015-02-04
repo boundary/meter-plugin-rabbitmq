@@ -16,7 +16,7 @@ Collects performance metrics from an instance of RabbitMQ.
 |:---------|:-------:|:------:|:----:|
 | Required |         |    +   |      |
 
-- [How to install node.js?](https://help.boundary.com/hc/articles/202360701)
+- [How to install Python?](https://help.boundary.com/hc/articles/202270132)
 - Credentials for a RabbitMQ user with monitor rights.
 
 ### Plugin Setup
