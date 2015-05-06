@@ -1,234 +1,186 @@
 {
-    "result": [
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Disk Free",
-            "displayName": "RabbitMQ - Disk Free",
-            "displayNameShort": "RMQ - Disk Free",
-            "isDisabled": 0,
-            "name": "RABBITMQ_DISK_FREE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Memory Used",
-            "displayName": "RabbitMQ - Memory Used",
-            "displayNameShort": "RMQ - Memory Used",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MEM_USED",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Delivered",
-            "displayName": "RabbitMQ - Messages Delivered",
-            "displayNameShort": "RMQ - Msg Del",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_DELIVER",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Delivered Rate",
-            "displayName": "RabbitMQ - Messages Delivered Rate",
-            "displayNameShort": "RMQ - Msg Del Rate",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_DELIVER_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Delivered Get",
-            "displayName": "RabbitMQ - Messages Delivered Get",
-            "displayNameShort": "RMQ - Msg Del Get",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_DELIVER_GET",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Delivered Get Rate",
-            "displayName": "RabbitMQ - Messages Delivered Get Rate",
-            "displayNameShort": "RMQ - Msg Del Get Rt",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_DELIVER_GET_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Delivered No Ack",
-            "displayName": "RabbitMQ - Messages Delivered No Ack",
-            "displayNameShort": "RMQ - Msg Del NoAck",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_DELIVER_NO_ACK",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Delivered No Ack Rate",
-            "displayName": "RabbitMQ - Messages Delivered No Ack Rate",
-            "displayNameShort": "RMQ - Msg Del NoAck R",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_DELIVER_NO_ACK_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Published",
-            "displayName": "RabbitMQ - Messages Published",
-            "displayNameShort": "RMQ - Msg Pub",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_PUBLISH",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Published Rate",
-            "displayName": "RabbitMQ - Messages Published Rate",
-            "displayNameShort": "RMQ - Msg Pub Rt",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_PUBLISH_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Redelivered",
-            "displayName": "RabbitMQ - Messages Redelivered",
-            "displayNameShort": "RMQ - Msg Redel",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_REDELIVER",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Messages Redelivered Rate",
-            "displayName": "RabbitMQ - Messages Redelivered Rate",
-            "displayNameShort": "RMQ - Msg Redel Rt",
-            "isDisabled": 0,
-            "name": "RABBITMQ_MESSAGE_STATS_REDELIVER_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Total Channels",
-            "displayName": "RabbitMQ - Total Channels",
-            "displayNameShort": "RMQ - Tot Channels",
-            "isDisabled": 0,
-            "name": "RABBITMQ_OBJECT_TOTALS_CHANNELS",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Total Connections",
-            "displayName": "RabbitMQ - Total Connections",
-            "displayNameShort": "RMQ - Tot Connect",
-            "isDisabled": 0,
-            "name": "RABBITMQ_OBJECT_TOTALS_CONNECTIONS",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Total Consumers",
-            "displayName": "RabbitMQ - Total Consumers",
-            "displayNameShort": "RMQ - Tot Consumers",
-            "isDisabled": 0,
-            "name": "RABBITMQ_OBJECT_TOTALS_CONSUMERS",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Total Exchanges",
-            "displayName": "RabbitMQ - Total Exchanges",
-            "displayNameShort": "RMQ - Tot Exchanges",
-            "isDisabled": 0,
-            "name": "RABBITMQ_OBJECT_TOTALS_EXCHANGES",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Total Queues",
-            "displayName": "RabbitMQ - Total Queues",
-            "displayNameShort": "RMQ - Total Queues",
-            "isDisabled": 0,
-            "name": "RABBITMQ_OBJECT_TOTALS_QUEUES",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "SUM",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Queue Total Messages",
-            "displayName": "RabbitMQ - Queue Total Messages",
-            "displayNameShort": "RMQ - Q Tot Msg",
-            "isDisabled": 0,
-            "name": "RABBITMQ_QUEUE_TOTALS_MESSAGES",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Queue Total Messages Rate",
-            "displayName": "RabbitMQ - Queue Total Messages Rate",
-            "displayNameShort": "RMQ - Q Tot Msg Rt",
-            "isDisabled": 0,
-            "name": "RABBITMQ_QUEUE_TOTALS_MESSAGES_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Queue Total Messages Unacknowledged",
-            "displayName": "RabbitMQ - Queue Total Messages Unacknowledged",
-            "displayNameShort": "RMQ - Q Tot Msg UAck",
-            "isDisabled": 0,
-            "name": "RABBITMQ_QUEUE_TOTALS_MESSAGES_UNACKNOWLEDGED",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Queue Total Messages Unacknowledged Details Rate",
-            "displayName": "RabbitMQ - Queue Total Messages Unacknowledged Details Rate",
-            "displayNameShort": "RMQ - Q Tot Msg Uk R",
-            "isDisabled": 0,
-            "name": "RABBITMQ_QUEUE_TOTALS_MESSAGES_UNACKNOWLEDGED_DETAILS_RATE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Queue Total Messages Ready",
-            "displayName": "RabbitMQ - Queue Total Messages Ready",
-            "displayNameShort": "RMQ - Q Tot Msg Ready",
-            "isDisabled": 0,
-            "name": "RABBITMQ_QUEUE_TOTALS_MESSAGES_READY",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": 0,
-            "description": "RabbitMQ - Queue Total Messages Ready Rate",
-            "displayName": "RabbitMQ - Queue Total Messages Ready Rate",
-            "displayNameShort": "RMQ - Q Tot Msg R Rt",
-            "isDisabled": 0,
-            "name": "RABBITMQ_QUEUE_TOTALS_MESSAGES_READY_DETAILS_RATE",
-            "unit": "number"
-        }
-    ]
+  "RABBITMQ_DISK_FREE": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Disk Free",
+    "displayName": "RabbitMQ - Disk Free",
+    "displayNameShort": "RMQ - Disk Free",
+    "unit": "number"
+  },
+  "RABBITMQ_MEM_USED": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Memory Used",
+    "displayName": "RabbitMQ - Memory Used",
+    "displayNameShort": "RMQ - Memory Used",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_DELIVER": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Delivered",
+    "displayName": "RabbitMQ - Messages Delivered",
+    "displayNameShort": "RMQ - Msg Del",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_DELIVER_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Delivered Rate",
+    "displayName": "RabbitMQ - Messages Delivered Rate",
+    "displayNameShort": "RMQ - Msg Del Rate",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_DELIVER_GET": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Delivered Get",
+    "displayName": "RabbitMQ - Messages Delivered Get",
+    "displayNameShort": "RMQ - Msg Del Get",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_DELIVER_GET_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Delivered Get Rate",
+    "displayName": "RabbitMQ - Messages Delivered Get Rate",
+    "displayNameShort": "RMQ - Msg Del Get Rt",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_DELIVER_NO_ACK": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Delivered No Ack",
+    "displayName": "RabbitMQ - Messages Delivered No Ack",
+    "displayNameShort": "RMQ - Msg Del NoAck",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_DELIVER_NO_ACK_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Delivered No Ack Rate",
+    "displayName": "RabbitMQ - Messages Delivered No Ack Rate",
+    "displayNameShort": "RMQ - Msg Del NoAck R",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_PUBLISH": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Published",
+    "displayName": "RabbitMQ - Messages Published",
+    "displayNameShort": "RMQ - Msg Pub",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_PUBLISH_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Published Rate",
+    "displayName": "RabbitMQ - Messages Published Rate",
+    "displayNameShort": "RMQ - Msg Pub Rt",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_REDELIVER": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Redelivered",
+    "displayName": "RabbitMQ - Messages Redelivered",
+    "displayNameShort": "RMQ - Msg Redel",
+    "unit": "number"
+  },
+  "RABBITMQ_MESSAGE_STATS_REDELIVER_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Messages Redelivered Rate",
+    "displayName": "RabbitMQ - Messages Redelivered Rate",
+    "displayNameShort": "RMQ - Msg Redel Rt",
+    "unit": "number"
+  },
+  "RABBITMQ_OBJECT_TOTALS_CHANNELS": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Total Channels",
+    "displayName": "RabbitMQ - Total Channels",
+    "displayNameShort": "RMQ - Tot Channels",
+    "unit": "number"
+  },
+  "RABBITMQ_OBJECT_TOTALS_CONNECTIONS": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Total Connections",
+    "displayName": "RabbitMQ - Total Connections",
+    "displayNameShort": "RMQ - Tot Connect",
+    "unit": "number"
+  },
+  "RABBITMQ_OBJECT_TOTALS_CONSUMERS": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Total Consumers",
+    "displayName": "RabbitMQ - Total Consumers",
+    "displayNameShort": "RMQ - Tot Consumers",
+    "unit": "number"
+  },
+  "RABBITMQ_OBJECT_TOTALS_EXCHANGES": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Total Exchanges",
+    "displayName": "RabbitMQ - Total Exchanges",
+    "displayNameShort": "RMQ - Tot Exchanges",
+    "unit": "number"
+  },
+  "RABBITMQ_OBJECT_TOTALS_QUEUES": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Total Queues",
+    "displayName": "RabbitMQ - Total Queues",
+    "displayNameShort": "RMQ - Total Queues",
+    "unit": "number"
+  },
+  "RABBITMQ_QUEUE_TOTALS_MESSAGES": {
+    "defaultAggregate": "SUM",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Queue Total Messages",
+    "displayName": "RabbitMQ - Queue Total Messages",
+    "displayNameShort": "RMQ - Q Tot Msg",
+    "unit": "number"
+  },
+  "RABBITMQ_QUEUE_TOTALS_MESSAGES_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Queue Total Messages Rate",
+    "displayName": "RabbitMQ - Queue Total Messages Rate",
+    "displayNameShort": "RMQ - Q Tot Msg Rt",
+    "unit": "number"
+  },
+  "RABBITMQ_QUEUE_TOTALS_MESSAGES_READY": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Queue Total Messages Ready",
+    "displayName": "RabbitMQ - Queue Total Messages Ready",
+    "displayNameShort": "RMQ - Q Tot Msg Ready",
+    "unit": "number"
+  },
+  "RABBITMQ_QUEUE_TOTALS_MESSAGES_READY_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Queue Total Messages Ready Rate",
+    "displayName": "RabbitMQ - Queue Total Messages Ready Rate",
+    "displayNameShort": "RMQ - Q Tot Msg R Rt",
+    "unit": "number"
+  },
+  "RABBITMQ_QUEUE_TOTALS_MESSAGES_UNACKNOWLEDGED": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Queue Total Messages Unacknowledged",
+    "displayName": "RabbitMQ - Queue Total Messages Unacknowledged",
+    "displayNameShort": "RMQ - Q Tot Msg UAck",
+    "unit": "number"
+  },
+  "RABBITMQ_QUEUE_TOTALS_MESSAGES_UNACKNOWLEDGED_DETAILS_RATE": {
+    "defaultAggregate": "AVG",
+    "defaultResolutionMS": 1000,
+    "description": "RabbitMQ - Queue Total Messages Unacknowledged Details Rate",
+    "displayName": "RabbitMQ - Queue Total Messages Unacknowledged Details Rate",
+    "displayNameShort": "RMQ - Q Tot Msg Uk R",
+    "unit": "number"
+  }
 }
