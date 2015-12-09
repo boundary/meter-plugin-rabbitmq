@@ -1,0 +1,9 @@
+{
+
+           "pollInterval": 1000,
+            "hostname": "localhost",
+            "port": "15672",
+            "user": "guest",
+            "password": "guest"
+}
+
