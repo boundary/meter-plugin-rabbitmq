@@ -130,7 +130,7 @@ class RabitMQMonitoring():
                 sleep(float(self.pollInterval))
             except Exception as se:
                 sleep(float(self.pollInterval))
-                sys.stderr.write("Trying to re-connect to host: {0} ({1}), Error: {2}".format(self.hostname,se.errno,se.message))
+                sys.stderr.write("\nTrying to re-connect to host: {0} \n".format(self.hostname))
         
       
 if __name__ == "__main__":
