@@ -129,9 +129,8 @@ class RabitMQMonitoring():
                 self.get_details()
                 sleep(float(self.pollInterval))
             except Exception as se:
-                sleep(float(self.pollInterval))
                 sys.stderr.write("\nTrying to re-connect to host: {0} \n".format(self.hostname))
-        
+       		sleep(float(self.pollInterval)) 
       
 if __name__ == "__main__":
   monitor = RabitMQMonitoring()
