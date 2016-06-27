@@ -124,11 +124,16 @@ class RabitMQMonitoring():
       self.url = "http://" + self.hostname + ":" + self.port + "/api/"
 
   def continuous_monitoring(self):
-    while True:
-      self.get_details()
-      sleep(float(self.pollInterval))
-
+        while True:
+            try:
+                self.get_details()
+                sleep(float(self.pollInterval))
+            except Exception as se:
+                sys.stderr.write("\nTrying to re-connect to host: {0} \n".format(self.hostname))
+       		sleep(float(self.pollInterval)) 
+      
 if __name__ == "__main__":
   monitor = RabitMQMonitoring()
   monitor.get_configuration()
   monitor.continuous_monitoring()
+
